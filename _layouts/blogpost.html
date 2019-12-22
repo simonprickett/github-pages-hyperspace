@@ -1,16 +1,82 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-    <head>
-        <title>TODO post layout</title>
-    </head>
-    <body>
-        <h1>TODO post layout</h1>
-        <p>{{page.author}}</p>
-        <p>{{ page.date | date: '%b %e, %Y' }}</p>
-        <p>{% for category in page.categories %}{{category}} {% endfor %}</p>
-        <p>{{page.title}}</p>
-        <p>{{page.subtitle}}</p>
-        <img src="{{site.baseurl}}/assets/images/{{page.main_image}}" alt="Project Image"/>
-        {{content}}
-    </body>
+
+<head>
+    <title>{{site.name}}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="{{site.baseurl}}/assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Header -->
+    <header id="header">
+        <a href="{{site.baseurl}}/" class="title">{{site.name}}</a>
+        <nav>
+            <ul>
+                <li><a href="{{site.baseurl}}/">Home</a></li>
+                <li><a href="{{site.baseurl}}/blog/" class="active">Blog</a></li>
+                <li><a href="{{site.baseurl}}/projects/">Projects</a></li>
+                <li><a href="{{site.baseurl}}/about/">About Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <section id="main" class="wrapper">
+            <div class="inner">
+                <h1 class="major">{{page.title}}</h1>
+
+                <!-- Image -->
+                <section>
+                    <div class="box alt">
+                        <div class="row gtr-uniform">
+                            <div class="col-12"><span class="image fit"><img src="{{site.baseurl}}/assets/images/{{page.main_image}}"
+                                        alt="Main Image" /></span>
+                            </div>
+                        </div>
+                        <em>{{ page.date | date: '%b %e, %Y' }} in {% for category in page.categories %}{{category}} {% endfor %}</em>
+                        <br />
+                        <br />
+                        {{content}}
+                    </div>
+                </section>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="wrapper alt">
+        <div class="inner">
+            <ul class="menu">
+                <li>&copy; {{site.owner}}. All rights reserved.</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{{site.baseurl}}/assets/js/jquery.min.js"></script>
+    <script src="{{site.baseurl}}/assets/js/jquery.scrollex.min.js"></script>
+    <script src="{{site.baseurl}}/assets/js/jquery.scrolly.min.js"></script>
+    <script src="{{site.baseurl}}/assets/js/browser.min.js"></script>
+    <script src="{{site.baseurl}}/assets/js/breakpoints.min.js"></script>
+    <script src="{{site.baseurl}}/assets/js/util.js"></script>
+    <script src="{{site.baseurl}}/assets/js/main.js"></script>
+
+</body>
+
 </html>
